@@ -1,0 +1,157 @@
+:root {
+  --color-hero-bg: #e9ded4;
+  --color-yellow: #fbce51;
+  --color-dark: #1f1f1f;
+  --color-white: #ffffff;
+  --color-red: #f54932;
+  --color-blue: #3057a2;
+  --duration: 30s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+}
+
+.container {
+  max-width: 136.6rem;
+  margin: 0 auto;
+  padding: 0 7.2rem;
+  background-color: var(--color-grey-light-1);
+}
+
+.title {
+  padding: 0;
+  margin: 0;
+  font-size: 5.4rem;
+}
+
+.title--decor-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title--decor-center span {
+  align-self: flex-end;
+}
+
+.descr {
+  padding: 0;
+  margin: 0;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 2rem;
+}
+
+.btn-link {
+  display: block;
+  text-align: center;
+  max-width: 26.3rem;
+  padding: 1.4rem 4.9rem;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  border-radius: 6.6rem;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 130%;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+.btn-link:hover {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.btn-link--dark {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.btn-link--dark:hover {
+  background-color: var(--color-yellow);
+  border-color: var(--color-yellow);
+  color: var(--color-dark);
+}
+
+/* HERO section */
+
+.hero {
+  height: 70rem;
+  background-image: url(../img/hero.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.hero__logo {
+  display: flex;
+  align-items: center;
+  padding: 2.6rem 0;
+}
+
+.hero__content {
+  padding-top: 3.5rem;
+  max-width: 54.2rem;
+}
+
+.hero__title {
+  margin-bottom: 2.5rem;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+
+.hero__descr {
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 130%;
+  margin-bottom: 3.8rem;
+}
+
+.hero__btn-block {
+  display: flex;
+  gap: 0 1.6rem;
+}
+
+.scroll-line {
+  display: flex;
+  padding: 1.8rem 0;
+  overflow: hidden;
+  background-color: var(--color-red);
+}
+
+.scroll-line__text {
+  font-size: 2.2rem;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.scroll-line__text span {
+  font-weight: 700;
+  font-size: 3rem;
+}
