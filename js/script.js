@@ -1,9 +1,9 @@
-function Marquee(selector, speed) {
+function marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
   const clone = parentSelector.innerHTML;
   const firstElement = parentSelector.children[0];
   let i = 0;
-  console.log(firstElement);
+
   parentSelector.insertAdjacentHTML('beforeend', clone);
 
   setInterval(function () {
@@ -15,4 +15,4 @@ function Marquee(selector, speed) {
   }, 0);
 }
 
-window.addEventListener('load', Marquee('.scroll-line', 0.2));
+window.addEventListener('load', marquee('.scroll-line', 0.2));
