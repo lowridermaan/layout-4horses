@@ -1,6 +1,7 @@
 :root {
   --color-hero-bg: #e9ded4;
   --color-yellow: #fbce51;
+  --color-yellow-active: #e7ae0f;
   --color-dark: #1f1f1f;
   --color-white: #ffffff;
   --color-red: #f54932;
@@ -41,6 +42,9 @@ img {
 
 .primary-title {
   font-size: 5.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 120%;
 }
 .secondary-title {
   font-size: 3.6rem;
@@ -172,6 +176,7 @@ img {
 /* announcement */
 .announcement {
   padding-top: 10.6rem;
+  padding-bottom: 10rem;
   background: url(../img/announcement-img-1.png) top 8rem right 7.2rem / 39.4rem
       25rem no-repeat,
     url(../img/announcement-img-2.png) top 36.4rem left 4.2rem/ 53rem 56.8rem no-repeat;
@@ -203,7 +208,7 @@ img {
 
 .table__row {
   display: grid;
-  grid-template-columns: 30.5rem 30rem;
+  grid-template-columns: 30.5rem auto;
   border-bottom: 2px solid #d0d0d0;
 }
 
@@ -250,4 +255,208 @@ img {
 
 .announcement__contact {
   color: var(--color-blue);
+}
+
+/* future */
+
+.future {
+  padding-top: 8.6rem;
+  padding-bottom: 8rem;
+}
+
+.future__heading {
+  display: inline-flex;
+  position: relative;
+  flex-wrap: wrap;
+  max-width: 80rem;
+  margin-bottom: 5.5rem;
+}
+
+.future__title {
+  position: relative;
+}
+
+.funture__descr {
+  position: absolute;
+  max-width: 28rem;
+  bottom: 1rem;
+  right: 22rem;
+  color: var(--color-blue);
+}
+
+.future__list {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fill, minmax(39.4rem, 1fr));
+  gap: 2rem;
+  list-style: none;
+}
+
+.future__list::after {
+  position: absolute;
+  content: '';
+  width: 40.1rem;
+  height: 23.5rem;
+  right: -6.5rem;
+  bottom: 0;
+  background: url(../img/plane.png) left top / contain no-repeat;
+}
+
+.future__item {
+  position: relative;
+  display: flex;
+  gap: 1.6rem;
+  padding-left: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background: url(../img/bg-future-item.png) top left/ cover no-repeat;
+}
+
+.item__number {
+  display: flex;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-family: 'Golos Text', sans-serif;
+  font-weight: 700;
+  border-radius: 100%;
+  background-color: var(--color-white);
+}
+
+.item-3 {
+  grid-row: span 2;
+}
+
+.item-7 {
+  grid-column: span 2;
+}
+
+.item__descr {
+  width: calc(80%);
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.item-7 .item__descr {
+  width: calc(55%);
+}
+
+/* members */
+
+.members {
+  padding-top: 12rem;
+}
+
+.members__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.slide-btns {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.slide-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  cursor: pointer;
+  background-color: var(--color-dark);
+  border: none;
+  border-radius: 100%;
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.slider__slide-count {
+  font-family: 'Golos Text', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+}
+
+.slide-btn:hover {
+  background-color: var(--color-yellow);
+}
+
+.slide-btn:active {
+  background-color: var(--color-yellow-active);
+}
+
+.slide-btn:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.slides-container {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  list-style: none;
+  margin-bottom: 13.8rem;
+}
+
+.slide {
+  display: flex;
+  flex: 1 0 100%;
+  justify-content: space-between;
+  gap: 9.4rem;
+  padding: 0 3.7rem;
+  font-family: 'Golos Text', sans-serif;
+}
+
+.slide-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Golos Text', sans-serif;
+}
+
+.slide__image {
+  margin-bottom: 2.8rem;
+}
+
+.slide__title {
+  margin-bottom: 0.6rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.slide__descr {
+  font-size: 2rem;
+  font-weight: normal;
+  color: #313131;
+  margin-bottom: 2.1rem;
+}
+.slide-item-btn {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--color-blue);
+  color: var(--color-blue);
+}
+
+.slide-item-btn:hover {
+  background-color: var(--color-blue);
+}
+
+/* footer */
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 7.2rem;
+  background-color: #e9ded4;
+}
+
+.footer__descr {
+  font-size: 1.6rem;
+  font-weight: normal;
 }
