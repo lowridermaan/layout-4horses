@@ -399,6 +399,7 @@ img {
 
 .slides-container {
   display: flex;
+
   overflow: hidden;
   scroll-behavior: smooth;
   list-style: none;
@@ -408,7 +409,7 @@ img {
 .slide {
   display: flex;
   flex: 1 0 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 9.4rem;
   padding: 0 3.7rem;
   font-family: 'Golos Text', sans-serif;

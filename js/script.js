@@ -31,6 +31,8 @@ const MEMBERS = [
   },
 ];
 
+let interval = 0; // для setInterval в слайдере
+
 // marquee
 function marquee(selector, speed) {
   const textMarkup = `
@@ -61,7 +63,9 @@ function marquee(selector, speed) {
 }
 
 // slider
-function createSlides(itemPerSlide = 3, sliderContainer) {
+function createSlides(itemPerSlide, sliderContainer) {
+  sliderContainer.innerHTML = '';
+
   let items = [];
 
   let membersItemMarkup = MEMBERS.map((member) => {
@@ -102,72 +106,78 @@ function createSlides(itemPerSlide = 3, sliderContainer) {
 }
 
 function slider(slideItems, numOfItems) {
-  const sliderContainer = document.querySelector('.slides-container');
-  const initialCounter = [slideItems, numOfItems];
-  const count = document.querySelector('.slider__slide-count');
-  count.textContent = `${initialCounter[0]}/${initialCounter[1]}`;
+  clearInterval(interval);
 
-  createSlides(slideItems, sliderContainer);
-  const prevButton = document.querySelector('.slide-btn--prev');
-  const nextButton = document.querySelector('.slide-btn--next');
-
-  const interval = setInterval(() => {
+  interval = setInterval(() => {
     handleNext();
   }, 4000);
+
+  const sliderContainer = document.querySelector('.slides-container');
+  const count = document.querySelector('.slider__slide-count');
+  sliderContainer.scrollLeft = 0;
+  createSlides(slideItems, sliderContainer);
+
+  let slideCount = slideItems;
+  count.textContent = `${slideCount}/${numOfItems}`;
+
+  const prevButton = document.querySelector('.slide-btn--prev');
+  const nextButton = document.querySelector('.slide-btn--next');
 
   const handleNext = () => {
     const slideWidth = sliderContainer.clientWidth;
     sliderContainer.scrollLeft += slideWidth;
 
-    if (initialCounter[0] === initialCounter[1]) {
+    if (slideCount === numOfItems) {
       sliderContainer.scrollLeft = 0;
-      initialCounter[0] = slideItems;
-      count.textContent = `${initialCounter[0]}/${initialCounter[1]}`;
+      slideCount = slideItems;
+      count.textContent = `${slideCount}/${numOfItems}`;
       return;
     }
 
-    initialCounter[0] += slideItems;
-    count.textContent = `${initialCounter[0]}/${initialCounter[1]}`;
+    slideCount += slideItems;
+    count.textContent = `${slideCount}/${numOfItems}`;
   };
 
   const handlePrev = () => {
     const slideWidth = sliderContainer.clientWidth;
     sliderContainer.scrollLeft -= slideWidth;
-    if (initialCounter[0] === slideItems) {
+    if (slideCount === slideItems) {
       sliderContainer.scrollLeft = slideWidth * slideItems;
-      initialCounter[0] = numOfItems;
-      count.textContent = `${initialCounter[0]}/${initialCounter[1]}`;
+      slideCount = numOfItems;
+      count.textContent = `${slideCount}/${numOfItems}`;
       return;
     }
-    initialCounter[0] -= slideItems;
-    count.textContent = `${initialCounter[0]}/${initialCounter[1]}`;
+    slideCount -= slideItems;
+    count.textContent = `${slideCount}/${numOfItems}`;
   };
 
   nextButton.addEventListener('click', () => {
-    clearInterval(interval);
     handleNext();
   });
 
   prevButton.addEventListener('click', () => {
-    clearInterval(interval);
     handlePrev();
   });
 }
 
 window.addEventListener('load', () => {
   marquee('.scroll-line', 0.2);
-  let numsOfSlides = 3;
 
   if (window.matchMedia('(min-width: 1366px)').matches) {
-    slider(numsOfSlides, MEMBERS.length);
-  } else {
-    numsOfSlides = 2;
-    slider(numsOfSlides, MEMBERS.length);
+    slider(3, MEMBERS.length);
+  } else if (window.matchMedia('(min-width: 945px)').matches) {
+    slider(2, MEMBERS.length);
+  } else if (window.matchMedia('(min-width: 375px)').matches) {
+    slider(1, MEMBERS.length);
   }
 
-  // window.addEventListener('resize', (e) => {
-  //   if (mediaQuery.matches) {
-  //     console.log('poing');
-  //   }
-  // });
+  window.addEventListener('resize', () => {
+    if (window.matchMedia('(min-width: 1366px)').matches) {
+      slider(3, MEMBERS.length);
+    } else if (window.matchMedia('(min-width: 945px)').matches) {
+      slider(2, MEMBERS.length);
+    } else if (window.matchMedia('(min-width: 375px)').matches) {
+      slider(1, MEMBERS.length);
+    }
+  });
 });
