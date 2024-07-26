@@ -450,6 +450,8 @@ window.addEventListener('load', () => {
   // при загрузке страницы
 
   if (window.matchMedia('(min-width: 1366px)').matches) {
+    carouselContainer.innerHTML = '';
+    carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
     slider(3, MEMBERS.length);
   } else if (window.matchMedia('(min-width: 1200px)').matches) {
     slider(2, MEMBERS.length);
