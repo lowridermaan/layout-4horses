@@ -118,7 +118,7 @@ img {
 /* HERO section */
 
 .hero {
-  height: 70rem;
+  padding-bottom: 9rem;
   background-image: url(../img/hero.png);
   background-position: center;
   background-size: cover;
@@ -314,7 +314,7 @@ img {
 
 .item__number {
   display: flex;
-  width: 3.6rem;
+  min-width: 3.6rem;
   height: 3.6rem;
   padding: 1rem;
   justify-content: center;
@@ -380,6 +380,10 @@ img {
   border-radius: 100%;
   font-size: 4rem;
   font-weight: 100;
+}
+.slide-btn svg {
+  width: 0.692rem;
+  height: 1.385rem;
 }
 
 .slider__slide-count {

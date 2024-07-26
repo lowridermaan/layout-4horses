@@ -20,11 +20,13 @@
       <div class="hero">
         <div class="container hero__container">
           <a class="hero__logo" href="#">
-            <img
-              class="hero__image"
-              src="./img/logo.png"
-              alt="логитип клуба четырех коней"
-            />
+            <picture>
+              <source
+                srcset="./img/logo-small.png"
+                media="(max-width: 1200px)"
+              />
+              <img src="./img/logo.png" alt="логитип клуба четырех коней" />
+            </picture>
           </a>
           <div class="hero__content">
             <h1 class="hero__title title primary-title">
@@ -119,10 +121,7 @@
           </div>
           <ul class="future__list fututre__carousel"></ul>
           <div class="futute__carousel-nav">
-            <button
-              class="carousel-btn slide-btn carousel-btn--prev"
-              data-dir="prev"
-            >
+            <button class="carousel-btn slide-btn" data-dir="prev">
               <svg
                 width="12"
                 height="20"
@@ -138,10 +137,7 @@
                 />
               </svg>
             </button>
-            <button
-              class="carousel-btn slide-btn carousel-btn--next"
-              data-dir="next"
-            >
+            <button class="carousel-btn slide-btn" data-dir="next">
               <svg
                 width="12"
                 height="20"

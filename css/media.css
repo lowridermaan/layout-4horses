@@ -84,6 +84,7 @@
   }
 
   .future__item {
+    padding: 6.2rem 2.4rem 2rem 2rem;
     display: none;
     object-fit: cover;
     background: linear-gradient(
@@ -102,6 +103,12 @@
 
   .item__descr {
     font-size: 1.8rem;
+  }
+
+  .item-content {
+    display: flex;
+    gap: 0 1.6rem;
+    margin-bottom: 3rem;
   }
 
   .futute__carousel-nav {
@@ -232,27 +239,53 @@
 }
 
 @media (max-width: 567px) {
+  .primary-title {
+    line-height: 110%;
+  }
+
   .container {
     padding: 0 2rem;
   }
 
   .hero {
+    padding-bottom: 28.8rem;
     background: url(../img/hero-small.png) bottom left/ contain no-repeat,
       linear-gradient(rgba(235, 210, 142, 0.45), rgba(235, 210, 142, 0.45)),
       url(../img/hero-small-back.png) top left/ 100% no-repeat;
   }
 
+  .hero__logo {
+    padding: 1.8rem 0;
+  }
+
+  .hero__content {
+    padding-top: 2rem;
+  }
+
+  .title--decor-center {
+    padding-left: 1rem;
+  }
+
+  .hero__descr {
+    margin-bottom: 3rem;
+  }
+
   .hero__btn-block {
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1.8rem;
   }
 
   .btn-link {
     max-width: 100%;
-    padding: 0.7rem 2.4rem;
+    padding: 1rem 2.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .btn-link--transp {
+    background: #ffffffbb;
+    border: none;
+    padding: 1.4rem 2.4rem;
   }
 
   .scroll-line {
@@ -263,12 +296,65 @@
     font-size: 1.6rem;
   }
 
-  .future__item {
-    padding-top: 6.2rem;
-  }
-
   .slide-btn {
     width: 3.6rem;
     height: 3.6rem;
+  }
+
+  .announcement {
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .announcement__container {
+    background: url(../img/announcement-img-2.png) top 44% center / 33.5rem
+      40.2rem no-repeat;
+  }
+
+  .announcement__title-up {
+    gap: 26rem;
+  }
+  .announcement__title-down {
+    padding-top: 1rem;
+    margin-bottom: 4.5rem;
+    text-align: left;
+  }
+
+  .announcement__contact,
+  .future__descr {
+    font-size: 1.8rem;
+  }
+
+  .table {
+    margin-bottom: 4rem;
+  }
+
+  .table__row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 0 1rem;
+    align-items: start;
+    padding-bottom: 1.5rem;
+  }
+
+  .table__row:nth-child(4n) {
+    padding-bottom: 0;
+  }
+
+  .table__col-1 {
+    margin-bottom: 1.4rem;
+  }
+
+  .future__heading {
+    margin-bottom: 15rem;
+  }
+
+  .future__item {
+    gap: 3rem;
+  }
+
+  .future__title {
+    margin-bottom: 1.5rem;
   }
 }

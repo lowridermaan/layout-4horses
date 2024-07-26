@@ -66,6 +66,63 @@ const btnsMarckup = `
   </button>
 `;
 
+const carouselItemsMarkupMob = `
+
+ <li class="future__item  item-active">
+              <div class="item-content">
+                <span class="item__number">1</span>
+                <p class="item__descr descr">
+                  Строительство железнодорожной магистрали Москва-Васюки
+                </p>
+              </div>
+              <div class="item-content">
+                <span class="item__number">2</span>
+                <p class="item__descr descr">
+                  Открытие фешенебельной гостиницы «Проходная пешка» и других
+                  небоскрёбов
+                </p>
+              </div>
+            </li>
+             <li class="future__item  item-active">
+              <div class="item-content">
+                <span class="item__number">3</span>
+                <p class="item__descr descr">
+                  Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет
+                </p>
+              </div>
+            </li>
+            <li class="future__item  item-active">
+              <div class="item-content">
+                <span class="item__number">4</span>
+                <p class="item__descr descr">
+                  Строительство дворца для турнира
+                </p>
+              </div>
+              <div class="item-content">
+                <span class="item__number">5</span>
+                <p class="item__descr descr">
+                  Размещение гаражей для гостевого автотранспорта
+                </p>
+              </div>
+            </li>
+            <li class="future__item  item-active">
+              <div class="item-content">
+                <span class="item__number">6</span>
+                <p class="item__descr descr">
+                  Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов
+                </p>
+              </div>
+            </li>
+            <li class="future__item  item-active">
+              <div class="item-content">
+                <span class="item__number">7</span>
+                <p class="item__descr descr">
+                  Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
+                </p>
+              </div>
+            </li>
+`;
+
 const carouselItemsMarkup = `
 <li class="future__item item-1 item-active" data-id="0" >
   <span class="item__number">1</span>
@@ -386,22 +443,26 @@ window.addEventListener('load', () => {
   insertBtns('up');
 
   carouselContainer.innerHTML = '';
-  carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
+  carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkupMob);
+
   // при загрузке страницы
+
   if (window.matchMedia('(min-width: 1366px)').matches) {
     slider(3, MEMBERS.length);
-  } else if (window.matchMedia('(min-width: 945px)').matches) {
-    carouselContainer.innerHTML = '';
-    carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
-    new FutureCarousel(carouselContainer);
+  } else if (window.matchMedia('(min-width: 1200px)').matches) {
     slider(2, MEMBERS.length);
-    insertBtns('down');
-  } else if (window.matchMedia('(max-width: 375px)').matches) {
-    slider(1, MEMBERS.length);
-    carouselContainer.innerHTML = '';
-    carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
     new FutureCarousel(carouselContainer);
+  } else if (window.matchMedia('(min-width: 750px)').matches) {
     insertBtns('down');
+    slider(1, MEMBERS.length);
+    new FutureCarousel(carouselContainer);
+  } else if (
+    window.matchMedia('(min-width: 375px)').matches ||
+    window.matchMedia('(max-width: 375px)').matches
+  ) {
+    insertBtns('down');
+    slider(1, MEMBERS.length);
+    new FutureCarousel(carouselContainer);
   }
 
   let resizeTimer;
@@ -420,11 +481,9 @@ window.addEventListener('load', () => {
       carouselContainer.innerHTML = '';
       carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
     } else if (window.matchMedia('(max-width: 1365px)').matches) {
-      resizeTimer = setTimeout(() => {
-        carouselContainer.innerHTML = '';
-        carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkup);
-        new FutureCarousel(carouselContainer);
-      }, 250);
+      carouselContainer.innerHTML = '';
+      carouselContainer.insertAdjacentHTML('beforeend', carouselItemsMarkupMob);
+      new FutureCarousel(carouselContainer);
     }
 
     if (window.matchMedia('(min-width: 1366px)').matches) {
