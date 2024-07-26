@@ -27,6 +27,7 @@ html {
 
 body {
   font-family: 'Merriweather', serif;
+  min-width: 37.5rem;
 }
 
 img {
@@ -195,7 +196,6 @@ img {
 .announcement__content {
   align-self: flex-end;
   max-width: 70.4rem;
-  height: 54rem;
 }
 
 .announcement__title-down {
@@ -276,7 +276,7 @@ img {
   position: relative;
 }
 
-.funture__descr {
+.future__descr {
   position: absolute;
   max-width: 28rem;
   bottom: 1rem;
@@ -344,6 +344,11 @@ img {
   width: calc(55%);
 }
 
+.futute__carousel-nav {
+  display: none;
+  justify-content: center;
+}
+
 /* members */
 
 .members {
@@ -396,10 +401,12 @@ img {
   background-color: #d6d6d6;
   cursor: not-allowed;
 }
+.slide-btns--hidden {
+  display: none;
+}
 
 .slides-container {
   display: flex;
-
   overflow: hidden;
   scroll-behavior: smooth;
   list-style: none;
