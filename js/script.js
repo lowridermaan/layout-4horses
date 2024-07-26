@@ -249,11 +249,13 @@ function createSlides(itemPerSlide, sliderContainer) {
   let membersItemMarkup = MEMBERS.map((member) => {
     return `
       <div class="slide-item">
-        <img
-          class="slide__image"
-          src="./img/member.png"
-          alt="image-of-member"
-        />
+        <picture>
+              <source
+                srcset="./img/member-sm.png"
+                media="(max-width: 1200px)"
+              />
+              <img  class="slide__image" src="./img/member.png" alt="фото участника" />
+            </picture>
         <h3 class="slide__title">${member.name}</h3>
         <p class="slide__descr">${member.rank}</p>
         <a href="${member.ref}" class="btn-link slide-item-btn">Подробнее</a>

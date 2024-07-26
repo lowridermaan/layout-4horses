@@ -55,6 +55,12 @@
   .table__row:last-child {
     padding-bottom: 0;
   }
+  .future__container {
+    background: url(../img/plane-left.png) left top 50% / 33.5rem 18.2rem
+        no-repeat,
+      url(../img/plane-small.png) right top 50% / 33.5rem 18.2rem no-repeat;
+  }
+
   .future__list::after {
     display: none;
   }
@@ -81,6 +87,7 @@
     width: 33.5rem;
     height: 30rem;
     margin: 0 auto;
+    margin-bottom: 2.8rem;
   }
 
   .future__item {
@@ -346,8 +353,22 @@
     margin-bottom: 1.4rem;
   }
 
+  .future__container {
+    background: none;
+  }
+
   .future__heading {
     margin-bottom: 15rem;
+  }
+
+  .future__item::before {
+    position: absolute;
+    content: '';
+    width: 33.5rem;
+    height: 20.8rem;
+    top: -13rem;
+    left: 0;
+    background: url(../img/plane-small.png) top center / contain no-repeat;
   }
 
   .future__item {
@@ -356,5 +377,32 @@
 
   .future__title {
     margin-bottom: 1.5rem;
+  }
+
+  .members {
+    padding-top: 4rem;
+  }
+
+  .members__heading {
+    margin-bottom: 4rem;
+  }
+  .slide-item-btn {
+    padding: 0.8rem 1rem;
+  }
+
+  .slides-container {
+    margin-bottom: 3.7rem;
+  }
+
+  .slide-btns {
+    gap: 1.4rem;
+  }
+
+  .slide-btns-down {
+    margin-bottom: 10rem;
+  }
+
+  .footer__descr {
+    line-height: 120%;
   }
 }

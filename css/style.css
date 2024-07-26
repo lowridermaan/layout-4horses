@@ -118,7 +118,7 @@ img {
 /* HERO section */
 
 .hero {
-  padding-bottom: 9rem;
+  padding-bottom: 12.7rem;
   background-image: url(../img/hero.png);
   background-position: center;
   background-size: cover;
@@ -260,7 +260,7 @@ img {
 /* future */
 
 .future {
-  padding-top: 8.6rem;
+  padding-top: 10rem;
   padding-bottom: 8rem;
 }
 
